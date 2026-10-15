@@ -1,0 +1,56 @@
+[
+  {
+    "id": "personal",
+    "en": "Personal home",
+    "zh": "个人主页",
+    "url": "https://hh-personal-archive.xiaoxuesheng729.chatgpt.site",
+    "private": true,
+    "description": "Profile, projects and contact",
+    "descriptionZh": "个人介绍、项目与联系方式"
+  },
+  {
+    "id": "research",
+    "en": "Research archive",
+    "zh": "研究档案",
+    "url": "https://cosmology-research-notebook.xiaoxuesheng729.chatgpt.site",
+    "private": true,
+    "description": "Research questions, results and evidence",
+    "descriptionZh": "研究主线、论文图表与观测检验"
+  },
+  {
+    "id": "map",
+    "en": "Cosmic history",
+    "zh": "宇宙演化图",
+    "url": "https://cosmology-research-map-haina.xiaoxuesheng729.chatgpt.site",
+    "private": true,
+    "description": "Explore cosmic epochs and open questions",
+    "descriptionZh": "探索宇宙年代、领域背景与开放问题"
+  },
+  {
+    "id": "structure",
+    "en": "Structure formation",
+    "zh": "结构形成",
+    "url": "https://hainahuang729.github.io/nonlinear-evolution-of-cosmological-structures-with-enhanced-primordial-power-spectrum/",
+    "private": false,
+    "description": "Simulation results and numerical checks",
+    "descriptionZh": "结构模拟结果与数值验证"
+  },
+  {
+    "id": "21cm",
+    "en": "21cmTB",
+    "zh": "21cmTB",
+    "url": "https://hainahuang729.github.io/21cmTB/",
+    "private": false,
+    "description": "Signal atlas, parameter exploration and inference",
+    "descriptionZh": "信号图谱、参数探索与推断"
+  },
+  {
+    "id": "emulator",
+    "en": "BTemu",
+    "zh": "BTemu",
+    "url": "https://hainahuang729.github.io/BTemu/",
+    "private": false,
+    "description": "Surrogate model development and validation",
+    "descriptionZh": "代理模型开发与验证进度"
+  }
+]

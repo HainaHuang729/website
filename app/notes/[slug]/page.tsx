@@ -1,0 +1,8 @@
+import { getTranslator } from '@/lib/i18n-server';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { notes } from '@/data/notes';
+import { TextLink } from '@/components/archive';
+export function generateStaticParams() { return notes.map(n=>({slug:n.slug})); }
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}) { const t = await getTranslator(); const {slug}=await params; const n=notes.find(n=>n.slug===slug); return {title:t(n?.title??"Note not found"),description:n?t(n.description):undefined}; }
+export default async function NotePage({params}:{params:Promise<{slug:string}>}) { const t = await getTranslator(); const {slug}=await params; const index=notes.findIndex(n=>n.slug===slug); if(index<0)notFound(); const note=notes[index];const next=notes[(index+1)%notes.length];return <article className="shell note-page"><div className="report-breadcrumb mono"><Link href="/notes">{t("← ALL FIELD NOTES")}</Link><span>{note.id.replace('-',' / ')}</span></div><header className="note-heading"><p className="mono muted"><time dateTime={note.date}>{note.date.replaceAll('-','.')}</time> / {t(note.category)}{t(" / SAMPLE WRITING")}</p><h1>{t(note.title)}</h1><p>{t(note.description)}</p></header><div className="note-body prose">{note.paragraphs.map(p=><p key={p}>{t(p)}</p>)}<div className="note-endmark" aria-hidden="true">∎</div><p className="mono muted">{t("FILED UNDER / ")}{note.tags.map(t).join(' · ')}</p></div><div className="next-report"><span className="mono muted">{t("NEXT NOTE / ")}{next.id}</span><TextLink href={`/notes/${next.slug}`}>{t(next.title)}</TextLink></div></article>; }
